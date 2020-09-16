@@ -17,11 +17,7 @@ void help() {
     cout <<
          "\nA program using thresholding, eroding, contours, approximates a polygonal curve and\n"
          "to find paper in a list of images\n"
-         "Returns sequence of squares detected on the image.\n"
-         "the sequence is stored in the specified memory storage\n"
-         "Call:\n"
-         "./squares\n"
-         "Using OpenCV version %s\n" << CV_VERSION << "\n" << endl;
+         << CV_VERSION << "\n" << endl;
 }
 
 
@@ -182,7 +178,7 @@ void poseEstimation(Mat &image, const vector<vector<Point> > &contours) {
     double distance = distanceToCamera(knownWidth, focalLength, perWidth);
 
     putText(image,
-            format("Distance: %.1f cm, Euler angles: x: %.1f, y: %.1f, z: %.1f degrees", distance/10, eulerAngles[0],
+            format("Distance: %.1f cm, Euler angles: x: %.1f, y: %.1f, z: %.1f degrees", distance / 10, eulerAngles[0],
                    eulerAngles[1], eulerAngles[2]),
             cv::Point(image.cols / 15, image.rows / 25),
             cv::FONT_HERSHEY_PLAIN,
